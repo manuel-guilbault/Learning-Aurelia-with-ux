@@ -1,0 +1,40 @@
+<template>
+  <require from="./list-editor.css"></require>
+
+  <ux-card>
+    <ux-card-header>
+      <ux-card-header-row>
+        <ux-card-title>
+          <slot name="title"></slot>
+        </ux-card-title>
+        <ux-button type="fab" size="small" click.delegate="addItem()">
+          <ux-icon icon="add"></ux-icon>
+        </ux-button>
+      </ux-card-header-row>
+    </ux-card-header>
+
+    <ux-card-content>
+      <ux-grid align-cells-middle class="remove-padding">
+        <template repeat.for="item of items">
+          <template with.bind="item">
+            <template replaceable part="item">
+              <ux-grid-cell xs="2">
+                <template replaceable part="label"></template>
+              </ux-grid-cell>
+              <ux-grid-cell xs="9">
+                <template replaceable part="value">${$this}</template>
+              </ux-grid-cell>
+              <ux-grid-cell xs="1">
+                <template replaceable part="remove-btn">
+                  <ux-button type="fab" size="small" click.delegate="items.splice($index, 1)">
+                    <ux-icon icon="close"></ux-icon>
+                  </ux-button>
+                </template>
+              </ux-grid-cell>
+            </template>
+          </template>
+        </template>
+      </ux-grid>
+    </ux-card-content>
+  </ux-card>
+  <template>

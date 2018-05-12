@@ -1,0 +1,28 @@
+<template>
+  <ux-grid>
+    <ux-grid-cell xs="4">
+      <a route-href="route: contact-photo; params.bind: { id: contact.id }">
+        <img class="responsive thumbnail" src.bind="contact.photoUrl">
+      </a>
+    </ux-grid-cell>
+    <ux-grid-cell xs="8">
+      <template if.bind="contact.isPerson">
+        <h1>${contact.fullName}</h1>
+        <h2>${contact.company}</h2>
+      </template>
+      <template if.bind="!contact.isPerson">
+        <h1>${contact.company}</h1>
+      </template>
+      <ux-button class="accent" navigate-to="route: contact-edition; params.bind: { id: contact.id }">
+        Update
+      </ux-button>
+      <ux-button click.delegate="tryDelete()">
+        Delete
+      </ux-button>
+    </ux-grid-cell>
+
+    <ux-button navigate-to="contact-list">
+      Back
+    </ux-button>
+  </ux-grid>
+</template>

@@ -1,0 +1,11 @@
+file-picker > label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+file-picker > input[type=file] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}

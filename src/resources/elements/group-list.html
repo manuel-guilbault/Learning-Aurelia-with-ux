@@ -1,0 +1,16 @@
+<template>
+  <ux-card repeat.for="group of items | groupBy:groupBy | orderBy:'key'">
+    <ux-card-header>
+      <ux-card-title>${group.key}</ux-card-title>
+    </ux-card-header>
+    <ux-card-content>
+      <ux-list>
+        <ux-list-item repeat.for="item of group.items | orderBy:orderBy">
+          <template with.bind="item">
+            <template replaceable part="item">${$this}</template>
+          </template>
+        </ux-list-item>
+      </ux-list>
+    </ux-card-content>
+  </ux-card>
+</template>

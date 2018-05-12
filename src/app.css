@@ -1,0 +1,14 @@
+.page-host {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+img.responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img.thumbnail {
+  border-radius: 8px;
+}

@@ -1,0 +1,19 @@
+<template>
+  <ux-form validation-renderer="ux-form" submit.delegate="save()" submit-on-enter>
+    <ux-grid>
+      <ux-grid-cell>
+        <h2>${contact.fullName}</h2>
+        <ux-field label="Photo">
+          <file-picker accept="image/*" files.bind="photo & validate" validation-errors.bind="photoErrors">
+            <strong hide.bind="preview">Click and select a photo (or drag and drop one here)</strong>
+            <img class="thumbnail" show.bind="preview" blob-src.bind="preview">
+          </file-picker>
+        </ux-field>
+      </ux-grid-cell>
+      <ux-grid-cell>
+        <ux-button class="accent" ux-submit>Save</ux-button>
+        <ux-button click.delegate="goToDetails()">Cancel</ux-button>
+      </ux-grid-cell>
+    </ux-grid>
+  </ux-form>
+</template>

@@ -1,0 +1,27 @@
+<template>
+  <ux-grid>
+    <ux-grid-cell xs="12">
+      <ux-button type="fab" size="small" navigate-to="contact-creation">
+        <ux-icon icon="add"></ux-icon>
+      </ux-button>
+    </ux-grid-cell>
+    <ux-grid-cell xs="12">
+      <group-list items.bind="contacts | filterBy:filter:'firstName':'lastName':'company'" 
+                  group-by="firstLetter"
+                  order-by="fullName">
+        <template replace-part="item">
+          <img class="detail avatar" src.bind="photoUrl">
+          <a class="list-content" route-href="route: contact-details; params.bind: { id }">
+            <span if.bind="isPerson">
+              ${firstName}
+              <strong>${lastName}</strong>
+            </span>
+            <span if.bind="!isPerson">
+              <strong>${company}</strong>
+            </span>
+          </div>
+        </template>
+      </group-list>
+    </ux-grid-cell>
+  </ux-grid>
+</template>

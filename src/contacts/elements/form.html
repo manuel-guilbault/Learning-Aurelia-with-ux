@@ -1,0 +1,113 @@
+<template>
+  <ux-grid class="remove-padding">
+    <ux-card>
+      <ux-card-content>
+        <ux-field label="First name">
+          <ux-input value.bind="contact.firstName & validate" autofocus></ux-input>
+          <ux-input-info></ux-input-info>
+        </ux-field>
+        <ux-field label="Last name">
+          <ux-input value.bind="contact.lastName & validate"></ux-input>
+          <ux-input-info></ux-input-info>
+        </ux-field>
+        <ux-field label="Company">
+          <ux-input value.bind="contact.company & validate"></ux-input>
+          <ux-input-info></ux-input-info>
+        </ux-field>
+        <ux-field label="Birthday">
+          <ux-datepicker type="date" value.bind="contact.birthday"></ux-datepicker>
+          <ux-input-info></ux-input-info>
+        </ux-field>
+        <ux-field label="Note">
+          <ux-textarea value.bind="contact.note" auto-resize></ux-textarea>
+          <ux-input-info></ux-input-info>
+        </ux-field>
+      </ux-card-content>
+    </ux-card>
+
+    <list-editor items.bind="contact.phoneNumbers" add-item.call="contact.addPhoneNumber()">
+      <span slot="title">Phone numbers</span>
+      <template replace-part="label">
+        <ux-select value.bind="type & validate">
+          <ux-option value="Home">Home</ux-option>
+          <ux-option value="Office">Office</ux-option>
+          <ux-option value="Mobile">Mobile</ux-option>
+          <ux-option value="Other">Other</ux-option>
+        </ux-select>
+      </template>
+      <template replace-part="value">
+        <ux-input value.bind="number & validate" placeholder="Phone number"></ux-input>
+        <ux-input-info></ux-input-info>
+      </template>
+    </list-editor>
+
+    <list-editor items.bind="contact.emailAddresses" add-item.call="contact.addEmailAddress()">
+      <span slot="title">Email addresses</span>
+      <template replace-part="label">
+        <ux-select value.bind="type & validate">
+          <ux-option value="Home">Home</ux-option>
+          <ux-option value="Office">Office</ux-option>
+          <ux-option value="Other">Other</ux-option>
+        </ux-select>
+      </template>
+      <template replace-part="value">
+        <ux-input value.bind="address & validate" placeholder="Email address"></ux-input>
+        <ux-input-info></ux-input-info>
+      </template>
+    </list-editor>
+
+    <list-editor items.bind="contact.addresses" add-item.call="contact.addAddress()">
+      <span slot="title">Addresses</span>
+      <template replace-part="label">
+        <ux-select value.bind="type & validate">
+          <ux-option value="Home">Home</ux-option>
+          <ux-option value="Office">Office</ux-option>
+          <ux-option value="Other">Other</ux-option>
+        </ux-select>
+      </template>
+      <template replace-part="value">
+        <ux-grid class="remove-padding">
+          <ux-grid-cell xs="4">
+            <ux-input value.bind="number & validate" placeholder="Street number"></ux-input>
+            <ux-input-info></ux-input-info>
+          </ux-grid-cell>
+          <ux-grid-cell xs="8">
+            <ux-input value.bind="street & validate" placeholder="Street"></ux-input>
+            <ux-input-info></ux-input-info>
+          </ux-grid-cell>
+          <ux-grid-cell xs="4">
+            <ux-input value.bind="postalCode & validate" placeholder="Postal code"></ux-input>
+            <ux-input-info></ux-input-info>
+          </ux-grid-cell>
+          <ux-grid-cell xs="8">
+            <ux-input value.bind="city & validate" placeholder="City"></ux-input>
+            <ux-input-info></ux-input-info>
+          </ux-grid-cell>
+          <ux-grid-cell xs="4">
+            <ux-input value.bind="state & validate" placeholder="State"></ux-input>
+            <ux-input-info></ux-input-info>
+          </ux-grid-cell>
+          <ux-grid-cell xs="8">
+            <ux-input value.bind="country & validate" placeholder="Country"></ux-input>
+            <ux-input-info></ux-input-info>
+          </ux-grid-cell>
+        </ux-grid>
+        </div>
+      </template>
+    </list-editor>
+
+    <list-editor items.bind="contact.socialProfiles" add-item.call="contact.addSocialProfile()">
+      <span slot="title">Social profiles</span>
+      <template replace-part="label">
+        <ux-select value.bind="type & validate">
+          <ux-option value="GitHub">GitHub</ux-option>
+          <ux-option value="Twitter">Twitter</ux-option>
+        </ux-select>
+      </template>
+      <template replace-part="value">
+        <ux-input value.bind="username & validate" placeholder="Username"></ux-input>
+        <ux-input-info></ux-input-info>
+      </template>
+    </list-editor>
+  </ux-grid>
+</template>

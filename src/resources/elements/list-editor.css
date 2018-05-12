@@ -1,0 +1,11 @@
+list-editor {
+  grid-column: span 12;
+}
+
+list-editor > ux-card > ux-card-header > ux-card-header-row {
+  align-items: center;
+}
+
+list-editor > ux-card > ux-card-header > ux-card-header-row > ux-button {
+  margin-left: 8px;
+}
