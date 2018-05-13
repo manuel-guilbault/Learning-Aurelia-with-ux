@@ -1,0 +1,50 @@
+top-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: var(--ux-design--primary);
+
+  --ux-theme--select-foreground: var(--ux-design--primary-foreground);
+}
+
+top-menu > nav {
+  height: 36px;
+  width: 768px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+top-menu > nav > ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+top-menu > nav > ul > li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+top-menu > nav > ul > li > a {
+  display: inline-block;
+  height: 20px;
+  width: 100%;
+  padding: 8px;
+  text-decoration: none;
+  text-align: center;
+  color: var(--ux-design--primary-foreground);
+}
+
+top-menu > nav > ul > li > a:hover {
+  background-color: var(--ux-design--primary-dark);
+}
+
+top-menu > nav > locale-picker {
+  margin: auto 0;
+}

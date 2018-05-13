@@ -1,0 +1,13 @@
+<template role="navigation">
+  <require from="./top-menu.css"></require>
+
+  <nav>
+    <ul>
+      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+        <a href.bind="row.href">${row.title & t}</a>
+      </li>
+    </ul>
+
+    <locale-picker></locale-picker>
+  </nav>
+</template>

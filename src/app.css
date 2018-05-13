@@ -1,6 +1,6 @@
 .page-host {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 36px auto 0 auto;
 }
 
 img.responsive {
@@ -11,4 +11,9 @@ img.responsive {
 
 img.thumbnail {
   border-radius: 8px;
+}
+
+ux-list ux-list-item a.list-content {
+  color: inherit;
+  color: var(--ux-theme--list-foreground, inherit);
 }

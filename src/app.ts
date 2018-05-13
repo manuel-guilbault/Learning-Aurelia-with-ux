@@ -1,19 +1,20 @@
+import { PLATFORM } from 'aurelia-framework';
 import { ConfiguresRouter, RouterConfiguration, Router } from 'aurelia-router';
-import { PLATFORM } from 'aurelia-pal';
+
+function findDefaultRoute(router: Router) {
+  return router.navigation[0].relativeHref;
+}
 
 export class App implements ConfiguresRouter {
 
   public router: Router;
-  
+
   public configureRouter(config: RouterConfiguration, router: Router) {
     this.router = router;
-    config.title = 'Contacts';
+    config.title = 'Learning Aurelia';
     config.map([
-      { route: '', name: 'contact-list', moduleId: PLATFORM.moduleName('contacts/pages/list') },
-      { route: 'new', name: 'contact-creation', moduleId: PLATFORM.moduleName('contacts/pages/creation') },
-      { route: ':id', name: 'contact-details', moduleId: PLATFORM.moduleName('contacts/pages/details') },
-      { route: ':id/edit', name: 'contact-edition', moduleId: PLATFORM.moduleName('contacts/pages/edition') },
-      { route: ':id/photo', name: 'contact-photo', moduleId: PLATFORM.moduleName('contacts/pages/photo') },
+      { route: '', redirect: findDefaultRoute(router) },
     ]);
+    config.mapUnknownRoutes(PLATFORM.moduleName('not-found'));
   }
 }

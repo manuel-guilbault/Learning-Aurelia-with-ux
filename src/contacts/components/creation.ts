@@ -32,6 +32,6 @@ export class ContactCreation implements RoutableComponentActivate {
   }
 
   public goToList() {
-    this.router.navigateToRoute('contact-list');
+    this.router.navigateToRoute('contacts');
   }
 }

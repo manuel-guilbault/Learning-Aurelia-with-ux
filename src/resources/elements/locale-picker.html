@@ -1,0 +1,5 @@
+<template>
+  <ux-select value.bind="selectedLocale" disabled.bind="isChangingLocale">
+    <ux-option repeat.for="locale of locales" value.bind="locale">${'locales.' + locale & t}</ux-option>
+  </ux-select>
+</template>

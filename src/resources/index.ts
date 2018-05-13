@@ -8,6 +8,8 @@ export function configure(config: FrameworkConfiguration) {
     PLATFORM.moduleName('./elements/file-picker'),
     PLATFORM.moduleName('./elements/group-list'),
     PLATFORM.moduleName('./elements/list-editor'),
+    PLATFORM.moduleName('./elements/locale-picker'),
+    PLATFORM.moduleName('./elements/top-menu'),
     PLATFORM.moduleName('./value-converters/filter-by'),
     PLATFORM.moduleName('./value-converters/group-by'),
     PLATFORM.moduleName('./value-converters/order-by'),
