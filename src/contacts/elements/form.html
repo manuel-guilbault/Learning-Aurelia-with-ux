@@ -2,23 +2,23 @@
   <ux-grid class="remove-padding">
     <ux-card>
       <ux-card-content>
-        <ux-field label="First name">
+        <ux-field label.bind="'contacts.firstName' & t">
           <ux-input value.bind="contact.firstName & validate" autofocus></ux-input>
           <ux-input-info></ux-input-info>
         </ux-field>
-        <ux-field label="Last name">
+        <ux-field label.bind="'contacts.lastName' & t">
           <ux-input value.bind="contact.lastName & validate"></ux-input>
           <ux-input-info></ux-input-info>
         </ux-field>
-        <ux-field label="Company">
+        <ux-field label.bind="'contacts.company' & t">
           <ux-input value.bind="contact.company & validate"></ux-input>
           <ux-input-info></ux-input-info>
         </ux-field>
-        <ux-field label="Birthday">
+        <ux-field label.bind="'contacts.birthday' & t">
           <ux-datepicker type="date" value.bind="contact.birthday"></ux-datepicker>
           <ux-input-info></ux-input-info>
         </ux-field>
-        <ux-field label="Note">
+        <ux-field label.bind="'contacts.note' & t">
           <ux-textarea value.bind="contact.note" auto-resize></ux-textarea>
           <ux-input-info></ux-input-info>
         </ux-field>
@@ -26,69 +26,69 @@
     </ux-card>
 
     <list-editor items.bind="contact.phoneNumbers" add-item.call="contact.addPhoneNumber()">
-      <span slot="title">Phone numbers</span>
+      <span slot="title">${'contacts.phoneNumbers' & t}</span>
       <template replace-part="label">
         <ux-select value.bind="type & validate">
-          <ux-option value="Home">Home</ux-option>
-          <ux-option value="Office">Office</ux-option>
-          <ux-option value="Mobile">Mobile</ux-option>
-          <ux-option value="Other">Other</ux-option>
+          <ux-option value="Home">${'contacts.types.Home' & t}</ux-option>
+          <ux-option value="Office">${'contacts.types.Office' & t}</ux-option>
+          <ux-option value="Mobile">${'contacts.types.Mobile' & t}</ux-option>
+          <ux-option value="Other">${'contacts.types.Other' & t}</ux-option>
         </ux-select>
       </template>
       <template replace-part="value">
-        <ux-input value.bind="number & validate" placeholder="Phone number"></ux-input>
+        <ux-input value.bind="number & validate" placeholder.bind="'contacts.phoneNumber' & t"></ux-input>
         <ux-input-info></ux-input-info>
       </template>
     </list-editor>
 
     <list-editor items.bind="contact.emailAddresses" add-item.call="contact.addEmailAddress()">
-      <span slot="title">Email addresses</span>
+      <span slot="title">${'contacts.emailAddresses' & t}</span>
       <template replace-part="label">
         <ux-select value.bind="type & validate">
-          <ux-option value="Home">Home</ux-option>
-          <ux-option value="Office">Office</ux-option>
-          <ux-option value="Other">Other</ux-option>
+          <ux-option value="Home">${'contacts.types.Home' & t}</ux-option>
+          <ux-option value="Office">${'contacts.types.Office' & t}</ux-option>
+          <ux-option value="Other">${'contacts.types.Other' & t}</ux-option>
         </ux-select>
       </template>
       <template replace-part="value">
-        <ux-input value.bind="address & validate" placeholder="Email address"></ux-input>
+        <ux-input value.bind="address & validate" placeholder.bind="'contacts.emailAddress' & t"></ux-input>
         <ux-input-info></ux-input-info>
       </template>
     </list-editor>
 
     <list-editor items.bind="contact.addresses" add-item.call="contact.addAddress()">
-      <span slot="title">Addresses</span>
+      <span slot="title">${'contacts.addresses' & t}</span>
       <template replace-part="label">
         <ux-select value.bind="type & validate">
-          <ux-option value="Home">Home</ux-option>
-          <ux-option value="Office">Office</ux-option>
-          <ux-option value="Other">Other</ux-option>
+          <ux-option value="Home">${'contacts.types.Home' & t}</ux-option>
+          <ux-option value="Office">${'contacts.types.Office' & t}</ux-option>
+          <ux-option value="Other">${'contacts.types.Other' & t}</ux-option>
         </ux-select>
       </template>
       <template replace-part="value">
         <ux-grid class="remove-padding">
           <ux-grid-cell xs="4">
-            <ux-input value.bind="number & validate" placeholder="Street number"></ux-input>
+            <ux-input value.bind="number & validate" placeholder.bind="'contacts.number' & t"></ux-input>
             <ux-input-info></ux-input-info>
           </ux-grid-cell>
           <ux-grid-cell xs="8">
-            <ux-input value.bind="street & validate" placeholder="Street"></ux-input>
+            <ux-input value.bind="street & validate" placeholder.bind="'contacts.street' & t"></ux-input>
             <ux-input-info></ux-input-info>
           </ux-grid-cell>
           <ux-grid-cell xs="4">
-            <ux-input value.bind="postalCode & validate" placeholder="Postal code"></ux-input>
+            <ux-input value.bind="postalCode & validate" placeholder.bind="'contacts.postalCode' & t"></ux-input>
             <ux-input-info></ux-input-info>
           </ux-grid-cell>
           <ux-grid-cell xs="8">
-            <ux-input value.bind="city & validate" placeholder="City"></ux-input>
+            <ux-input value.bind="city & validate" placeholder.bind="'contacts.city' & t"></ux-input>
             <ux-input-info></ux-input-info>
           </ux-grid-cell>
           <ux-grid-cell xs="4">
-            <ux-input value.bind="state & validate" placeholder="State"></ux-input>
+            <ux-input value.bind="state & validate" placeholder.bind="'contacts.state' & t"></ux-input>
             <ux-input-info></ux-input-info>
           </ux-grid-cell>
           <ux-grid-cell xs="8">
-            <ux-input value.bind="country & validate" placeholder="Country"></ux-input>
+            <ux-input value.bind="country & validate" placeholder.bind="'contacts.country' & t"></ux-input>
             <ux-input-info></ux-input-info>
           </ux-grid-cell>
         </ux-grid>
@@ -97,15 +97,15 @@
     </list-editor>
 
     <list-editor items.bind="contact.socialProfiles" add-item.call="contact.addSocialProfile()">
-      <span slot="title">Social profiles</span>
+      <span slot="title">${'contacts.socialProfiles' & t}</span>
       <template replace-part="label">
         <ux-select value.bind="type & validate">
-          <ux-option value="GitHub">GitHub</ux-option>
-          <ux-option value="Twitter">Twitter</ux-option>
+          <ux-option value="GitHub">${'contacts.types.GitHub' & t}</ux-option>
+          <ux-option value="Twitter">${'contacts.types.Twitter' & t}</ux-option>
         </ux-select>
       </template>
       <template replace-part="value">
-        <ux-input value.bind="username & validate" placeholder="Username"></ux-input>
+        <ux-input value.bind="username & validate" placeholder.bind="'contacts.username' & t"></ux-input>
         <ux-input-info></ux-input-info>
       </template>
     </list-editor>

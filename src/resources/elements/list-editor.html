@@ -7,7 +7,9 @@
         <ux-card-title>
           <slot name="title"></slot>
         </ux-card-title>
-        <ux-button type="fab" size="small" click.delegate="addItem()">
+        <ux-button type="fab" size="small" 
+                   t="[title]resources.actions.add"
+                   click.delegate="addItem()">
           <ux-icon icon="add"></ux-icon>
         </ux-button>
       </ux-card-header-row>
@@ -26,7 +28,9 @@
               </ux-grid-cell>
               <ux-grid-cell xs="1">
                 <template replaceable part="remove-btn">
-                  <ux-button type="fab" size="small" click.delegate="items.splice($index, 1)">
+                  <ux-button type="fab" size="small" 
+                             t="[title]resources.actions.remove"
+                             click.delegate="items.splice($index, 1)">
                     <ux-icon icon="close"></ux-icon>
                   </ux-button>
                 </template>

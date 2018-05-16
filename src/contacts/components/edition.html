@@ -8,8 +8,8 @@
         <contact-form contact.bind="contact"></contact-form>
       </ux-grid-cell>
       <ux-grid-cell>
-        <ux-button class="accent" ux-submit>Save</ux-button>
-        <ux-button click.delegate="goToDetails()">Cancel</ux-button>
+        <ux-button class="accent" ux-submit>${'contacts.save' & t}</ux-button>
+        <ux-button click.delegate="goToDetails()">${'contacts.cancel' & t}</ux-button>
       </ux-grid-cell>
     </ux-grid>
   </ux-form>

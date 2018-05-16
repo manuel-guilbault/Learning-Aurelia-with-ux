@@ -1,5 +1,6 @@
 import { autoinject } from 'aurelia-framework';
 import { RoutableComponentActivate, Router, RouteConfig } from 'aurelia-router';
+import { I18N } from 'aurelia-i18n';
 
 import { Contact } from 'contacts/models/contact';
 import { ContactApi } from 'contacts/services/api';
@@ -11,7 +12,8 @@ export class ContactDetails implements RoutableComponentActivate {
 
   constructor(
     private readonly contactApi: ContactApi,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly i18n: I18N
   ) {}
 
   public async activate({ id }: { id: string }, routeConfig: RouteConfig) {
@@ -20,7 +22,7 @@ export class ContactDetails implements RoutableComponentActivate {
   }
 
   public async tryDelete() {
-    if (confirm('Do you really want to delete this contact?')) {
+    if (confirm(this.i18n.tr('contacts.confirmDelete'))) {
       await this.contactApi.delete(this.contact.id);
       this.goToList();
     }

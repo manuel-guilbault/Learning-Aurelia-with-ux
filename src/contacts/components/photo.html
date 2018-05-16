@@ -5,14 +5,15 @@
         <h2>${contact.fullName}</h2>
         <ux-field label="Photo">
           <file-picker accept="image/*" files.bind="photo & validate" validation-errors.bind="photoErrors">
-            <strong hide.bind="preview">Click and select a photo (or drag and drop one here)</strong>
-            <img class="thumbnail" show.bind="preview" blob-src.bind="preview">
+            <strong hide.bind="preview" t="contacts.pickPhoto"></strong>
+            <img class="thumbnail" show.bind="preview" blob-src.bind="preview" t="[alt]contacts.preview">
           </file-picker>
+          <ux-input-info></ux-input-info>
         </ux-field>
       </ux-grid-cell>
       <ux-grid-cell>
-        <ux-button class="accent" ux-submit>Save</ux-button>
-        <ux-button click.delegate="goToDetails()">Cancel</ux-button>
+        <ux-button class="accent" ux-submit>${'contacts.save' & t}</ux-button>
+        <ux-button click.delegate="goToDetails()">${'contacts.cancel' & t}</ux-button>
       </ux-grid-cell>
     </ux-grid>
   </ux-form>

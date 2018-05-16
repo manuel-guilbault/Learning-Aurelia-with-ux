@@ -1,8 +1,8 @@
 <template>
   <ux-grid>
     <ux-grid-cell xs="4">
-      <a route-href="route: contact-photo; params.bind: { id: contact.id }">
-        <img class="responsive thumbnail" src.bind="contact.photoUrl">
+      <a route-href="route: contact-photo; params.bind: { id: contact.id }" t="[title]contacts.changePhoto">
+        <img class="responsive thumbnail" src.bind="contact.photoUrl" t="[alt]contacts.photo">
       </a>
     </ux-grid-cell>
     <ux-grid-cell xs="8">
@@ -14,15 +14,15 @@
         <h1>${contact.company}</h1>
       </template>
       <ux-button class="accent" navigate-to="route: contact-edition; params.bind: { id: contact.id }">
-        Update
+        ${'contacts.modify' & t}
       </ux-button>
       <ux-button click.delegate="tryDelete()">
-        Delete
+        ${'contacts.delete' & t}
       </ux-button>
     </ux-grid-cell>
 
     <ux-button navigate-to="contacts">
-      Back
+      ${'contacts.back' & t}
     </ux-button>
   </ux-grid>
 </template>

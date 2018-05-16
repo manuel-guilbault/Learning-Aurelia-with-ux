@@ -4,12 +4,12 @@
   <ux-form validation-renderer="ux-form" submit.delegate="create()" submit-on-enter>
     <ux-grid>
       <ux-grid-cell>
-        <h2>New contact</h2>
+        <h2 t="contacts.newContact"></h2>
         <contact-form contact.bind="contact"></contact-form>
       </ux-grid-cell>
       <ux-grid-cell>
-          <ux-button class="accent" ux-submit>Create</ux-button>
-          <ux-button click.delegate="goToList()">Cancel</ux-button>
+          <ux-button class="accent" ux-submit>${'contacts.save' & t}</ux-button>
+          <ux-button click.delegate="goToList()">${'contacts.cancel' & t}</ux-button>
       </ux-grid-cell>
     </ux-grid>
   </ux-form>
