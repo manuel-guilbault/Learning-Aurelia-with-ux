@@ -6,6 +6,7 @@ import { ContactApi } from 'contacts/services/api';
 @autoinject()
 export class ContactList implements RoutableComponentActivate {
   
+  public filter = '';
   public readonly contacts: Contact[] = [];
 
   constructor(
